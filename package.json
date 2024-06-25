@@ -1,7 +1,7 @@
 {
-  "name": "namaste-react",
+  "name": "online-food-ordering-app",
   "version": "1.0.0",
-  "description": "Namaste-React",
+  "description": "online-food-ordering-app",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohit1508/namaste-react.git"
+    "url": "https://github.com/mohit1508/online-food-ordering-app.git"
   },
   "keywords": [],
   "author": "Mohit Khandelwal",
