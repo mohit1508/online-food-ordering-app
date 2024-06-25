@@ -18,7 +18,7 @@ export const shimmer_menu_card_unit = 4;
 
 // Github - username
 export const Github_UserName = "mohit1508";
-export const Github_Repository_Name = "namaste-react";
+export const Github_Repository_Name = "online-food-ordering-app";
 
 // Github API for User
 export const Github_API_User = "https://api.github.com/users/";
