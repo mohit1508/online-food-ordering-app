@@ -42,38 +42,6 @@ class ProfileRepoClass extends Component {
                   </a>
                 </h1>
                 <h3 className="repo-des">{repo.description}</h3>
-                {/* <div className="profile-repo-items">
-                  <h3>
-                    <a
-                      href={html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FiUsers />
-                      <span>{followers} Followers</span>
-                    </a>
-                  </h3>
-                  <h3>
-                    <a
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <BiGitRepoForked />
-                      <span>{repo.forks_count} Forks</span>
-                    </a>
-                  </h3>
-                  <h3>
-                    <a
-                      href={repo.html_url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <BiStar />
-                      <span>{repo.stargazers_count} Stars</span>
-                    </a>
-                  </h3>
-                </div> */}
               </div>
             );
           })}

@@ -62,7 +62,7 @@ const Body = () => {
             searchData(searchText, allRestaurants);
           }}
         >
-          Search
+          <i className="fas fa-search"></i>
         </button>
       </div>
       {errorMessage && <div className="error-container">{errorMessage}</div>}
