@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withDiscount } from "./RestaurantCard";
 import { useState } from "react";
 import Shimmer from "./Shimmer"; 
 import { API_URL } from "../utils/constants";
@@ -13,6 +13,8 @@ const Body = () => {
   const [allRestaurants, FilterRes] = useResData(API_URL);
   const [filteredRestaurants, setFilteredRestaurants] = useState(null);
   const isOnline = useOnline();
+
+  const DiscountRestaurantCard = withDiscount(RestaurantCard);
 
   if (!isOnline) {
     return <UserOffline />;
@@ -42,6 +44,7 @@ const Body = () => {
   };
 
   if (!allRestaurants) return null;
+  console.log(allRestaurants);
 
   return (
     <div className="body-container">
@@ -78,7 +81,7 @@ const Body = () => {
                   to={"/restaurant/" + restaurant?.info?.id}
                   key={restaurant?.info?.id}
                 >
-                  <RestaurantCard {...restaurant?.info} />
+                  <DiscountRestaurantCard {...restaurant?.info} />
                 </Link>
               );
             }

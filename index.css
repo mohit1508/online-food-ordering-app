@@ -213,7 +213,11 @@ a {
   transform: scale(1.02);
 }
 
-.card h3 {
+.card > .card-content {
+  margin-left: 5px;
+}
+
+.card > .card-content h3 {
   color: var(--light-text-title);
   white-space: nowrap;
   overflow: hidden;
@@ -225,22 +229,22 @@ a {
   border-radius: 10px;
 }
 
-.card > h5 {
+.card > .card-content > h5 {
   font-weight: lighter;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.card > span {
+.card > .card-content > span {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  /* margin-top: 5px;
+  margin-bottom: 5px; */
   text-align: center;
 }
 
-.card > span > h4 {
+.card > .card-content > span > h4 {
   font-weight: bolder;
   font-size: 14px;
   padding: 0 2px 0;
@@ -248,7 +252,7 @@ a {
   color: var(--light-text-title);
 }
 
-.card > span > h4:first-child {
+.card > .card-content > span > h4:first-child {
   display: flex;
   align-items: center;
   background-color: var(--light-green);
@@ -258,9 +262,19 @@ a {
   margin-top: 5px;
 }
 
-.card > span > h4:first-child .fa-star {
+.card > .card-content > span > h4:first-child .fa-star {
   font-size: 10px;
   padding: 2px 5px 3px 0;
+}
+
+.discount-text {
+  position: absolute;
+  margin: 30px;
+  padding: 5px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-weight: bold;
 }
 
 /* Restaurant cards CSS End*/
