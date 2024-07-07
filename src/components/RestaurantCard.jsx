@@ -44,10 +44,12 @@ export const withDiscount = (RestaurantCard) => {
     const { aggregatedDiscountInfoV3 } = resInfo;
  
     return (
-      <div className="discount-card">
-          <div className="discount-text">
-          {aggregatedDiscountInfoV3?.header} {aggregatedDiscountInfoV3?.subHeader}
-          </div>
+      <div>
+          {aggregatedDiscountInfoV3 && (
+            <div className="discount-text">
+              {aggregatedDiscountInfoV3?.header} {aggregatedDiscountInfoV3?.subHeader}
+            </div>
+          )}
         <RestaurantCard {...resInfo} />
       </div>
     );

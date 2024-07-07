@@ -275,6 +275,12 @@ a {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   font-weight: bold;
+  z-index: 1;
+  transition-duration: 0.2s;
+}
+
+.discount-wrapper:hover .discount-text {
+  transform: scale(1.02);
 }
 
 /* Restaurant cards CSS End*/

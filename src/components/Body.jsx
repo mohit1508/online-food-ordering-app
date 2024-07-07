@@ -44,7 +44,6 @@ const Body = () => {
   };
 
   if (!allRestaurants) return null;
-  console.log(allRestaurants);
 
   return (
     <div className="body-container">
