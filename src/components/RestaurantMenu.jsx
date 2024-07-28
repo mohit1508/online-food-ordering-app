@@ -10,6 +10,9 @@ import { MenuShimmer } from "./Shimmer";
 import useResMenuData from "../utils/useResMenuData";
 import useOnline from "../utils/useOnline";
 import UserOffline from "./UserOffline";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux-store/cartSlice";
+import { useState } from "react";
 
 const RestaurantMenu = () => {
   const { resId } = useParams(); 
@@ -20,10 +23,21 @@ const RestaurantMenu = () => {
     MENU_ITEM_TYPE_KEY
   );
 
-  const isOnline = useOnline();
+  const [index, setIndex] = useState(0);
 
+  const isOnline = useOnline();
   if (!isOnline) {
     return <UserOffline />;
+  }
+
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    const itemToCart = {...item};
+    itemToCart.index = index;
+    setIndex(index+1);
+    // Dispatch an action
+    dispatch(addItem(itemToCart));
   }
 
   return !restaurant ? (
@@ -90,7 +104,7 @@ const RestaurantMenu = () => {
                       alt={item?.name}
                     />
                   )}
-                  <button className="add-btn"> ADD +</button>
+                  <button className="add-btn" onClick={() => handleAddItem(item)}> ADD +</button>
                 </div>
               </div>
             ))}

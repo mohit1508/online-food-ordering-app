@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import useAuth from "../utils/useAuth";
 import useLocalStorage from "../utils/useLocalStorage";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import UserContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 
 const Title = () => (
   <Link to="/">
@@ -37,6 +39,11 @@ const Header = () => {
   // call custom hook useOnline if user is online or not
   const isOnline = useOnline();
 
+  const { loggedInUser } = useContext(UserContext);
+
+  // subscribing to the store using a Selector
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className="header">
       <Title />
@@ -59,7 +66,9 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <i className="fa-solid fa-cart-shopping"></i>
+            <Link to="/cart">
+              <span className="cart-container"><i className="fa-solid fa-cart-shopping"></i>({cartItems.length} items)</span>
+            </Link>
           </li>
           <li>
             {/* use conditional rendering for login and logout */}
@@ -89,6 +98,13 @@ const Header = () => {
                   ●
                 </span>
               </button>
+            )}
+          </li>
+          <li>
+            {isLoggedin ? (
+              <span>{loggedInUser}</span>
+            ) : (
+              <span>{""}</span>
             )}
           </li>
         </ul>

@@ -32,6 +32,7 @@ a {
   --dark-orange: #c26100;
   --x-dark-orange: rgb(157, 42, 1);
   --light-red: rgb(236, 56, 56);
+  --dark-red: rgb(185, 3, 3);
   --white: #fff;
   --light-white-text: #eaeaea;
   --light-black: rgb(23, 23, 23);
@@ -89,8 +90,13 @@ a {
   padding: 10px;
 }
 
-.nav-items > ul > li .fa-solid {
+/* .nav-items > ul > li .fa-solid {
   padding-top: 15%;
+} */
+
+.cart-container {
+  display: flex;
+  align-items: center;
 }
 
 .nav-items > ul > li:hover,
@@ -276,11 +282,6 @@ a {
   color: white;
   font-weight: bold;
   z-index: 1;
-  transition-duration: 0.2s;
-}
-
-.discount-wrapper:hover .discount-text {
-  transform: scale(1.02);
 }
 
 /* Restaurant cards CSS End*/
@@ -454,6 +455,42 @@ a {
   font-size: large;
 }
 /* Restaurant Menu End */
+
+.cart-header {
+  width: 850px;
+  background-color: var(--dark-orange);
+  color: var(--light-white-text);
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.cart {
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-cart-btn {
+  padding: 8px 25px;
+  background-color: rgba(19, 47, 56, 255);
+  color: var(--light-white-text);
+  text-align: center;
+  border-radius: 5px;
+  font-size: large;
+}
+
+.remove-btn {
+  background-color: var(--dark-red);
+  color: var(--white);
+  padding: 6px 18px;
+  cursor: pointer;
+  outline: none;
+  border-color: var(--dark-red);
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: large;
+}
 
 /*Shimmer Card CSS Start*/
 .shimmer-container {
